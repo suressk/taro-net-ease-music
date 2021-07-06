@@ -1,4 +1,4 @@
-# <div align="center">K. taro app</div>
+# <div align="center">K. Taro App</div>
 
 <div align="center">
     <img src="https://img.shields.io/badge/react-v17.0.0-blue">
