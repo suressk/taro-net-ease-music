@@ -1,24 +1,17 @@
-import { Component } from 'react'
+import React, { memo } from 'react'
 import { View, Text } from '@tarojs/components'
+import {useRouter} from '@tarojs/taro'
 import './mine.scss'
 
-export default class Mine extends Component {
+const Mine: React.FC = () => {
+  const {params} = useRouter()
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='mine'>
-        <Text>Mine!</Text>
-      </View>
-    )
-  }
+  return (
+    <View className='mine'>
+      <Text>Mine!</Text>
+      <Text>Information:{params.username}, {params.age}</Text>
+    </View>
+  )
 }
+
+export default memo(Mine)

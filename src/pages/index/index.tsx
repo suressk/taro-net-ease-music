@@ -1,24 +1,29 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
+import React, { memo } from 'react'
+import { View, Text, Button } from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import Login from '@/components/Login/index'
+import styles from './index.module.scss'
 
-export default class Index extends Component {
+/**
+ * 首页
+ * */
+const Index: React.FC = () => {
 
-  componentWillMount () { }
+  console.log(styles)
 
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Text>Hello world!</Text>
-      </View>
-    )
+  const handleClick = () => {
+    Taro.navigateTo({
+      url: '/pages/mine/mine?username=Saul&age=25'
+    })
   }
+
+  return (
+    <View className='index'>
+      <Text>Hello world!</Text>
+      <Login />
+      <Button onClick={handleClick}>跳转页面</Button>
+    </View>
+  )
 }
+
+export default memo(Index)

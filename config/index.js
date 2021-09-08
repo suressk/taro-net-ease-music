@@ -1,3 +1,10 @@
+// eslint-disable-next-line import/no-commonjs
+const {resolve} = require('path')
+
+const resolvePath = dir => {
+  return resolve(__dirname, '..', dir)
+}
+
 const config = {
   projectName: 'taro-start-app',
   date: '2021-7-4',
@@ -9,14 +16,19 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
-  defineConstants: {
+  alias: {
+    "@": resolvePath("src"),
+    "@components": resolvePath('src/components'),
+    "@utils": resolvePath('src/utils'),
+    "@store": resolvePath('src/store'),
+    "@pages": resolvePath('src/pages'),
+    "@locales": resolvePath('src/locales')
   },
+  plugins: [],
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   framework: 'react',
   mini: {
@@ -34,12 +46,34 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      // 全局自定义变量
+      chain.merge({
+        module: {
+          rule: {
+            styleLoader: {
+              test: /\.scss$/,
+              use: [
+                {
+                  loader: 'style-resources-loader',
+                  options: {
+                    patterns: [
+                      resolvePath('src/common/styles/variables.scss')
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      })
     }
   },
   h5: {
@@ -52,12 +86,22 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      chain.module
+        .rule('scss')
+        .test(/\.scss$/)
+        .use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+          patterns: resolvePath('src/common/styles/variables.scss')
+        })
     }
   }
 }

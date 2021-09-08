@@ -1,0 +1,23 @@
+@import "variables";
+
+.flex,
+.flex-between,
+.flex-around {
+  display: flex;
+  align-items: center;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+// 文字超出隐藏打点
+.txt-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

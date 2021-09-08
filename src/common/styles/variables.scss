@@ -1,0 +1,31 @@
+// 主颜色
+$color-primary: #00a2ff;
+$color-danger: #f44;
+$color-success: #2dda86;
+$color-info: #1989fa;
+$color-warn: #ffa000;
+
+// 中性色
+$color-t1: rgba(0, 0, 0, .9); // title
+$color-t2: rgba(0, 0, 0, .7); // sub-title、icon
+$color-t3: rgba(0, 0, 0, .5); // description
+$color-t4: rgba(0, 0, 0, .3); // disabled、tip txt
+$color-t5: rgba(0, 0, 0, .2); // arrow color
+$color-t6: rgba(0, 0, 0, .1); // divide-line
+$color-overlay: rgba(0, 0, 0, .4); // modal overlay
+
+// 间隔
+$base-space: 8px;
+$space-P1: $base-space;
+$space-P2: $base-space * 2; // 16px
+$space-P3: $base-space * 3; // 24px
+$space-P4: $base-space * 4; // 32px
+$space-P5: $base-space * 5; // 40px
+$space-P6: $base-space * 6; // 48px
+$space-P7: $base-space * 7; // 56px
+$space-P8: $base-space * 8; // 64px
+
+// 圆角
+$radius-m: 16px;
+$radius-s: 8px;
+

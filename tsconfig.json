@@ -16,12 +16,21 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "react-jsx",
+    "jsxFactory": "React.createElement",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types",
       "global.d.ts"
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@store/*": ["./src/store/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@locales/*": ["./src/locales/*"]
+    }
   },
   "exclude": [
     "node_modules",
