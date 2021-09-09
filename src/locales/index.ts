@@ -6,7 +6,7 @@ export default {
   en
 }
 
-export const localeJson = {
-  zh,
-  en
-}
+// export const localeJson = {
+//   zh,
+//   en
+// }

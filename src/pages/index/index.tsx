@@ -1,15 +1,16 @@
 import React, { memo } from 'react'
 import { View, Text, Button } from '@tarojs/components'
 import Taro from '@tarojs/taro'
+import { useTranslation } from 'react-i18next'
 import Login from '@/components/Login/index'
-import styles from './index.module.scss'
+// import styles from './index.module.scss'
 
 /**
  * 首页
  * */
 const Index: React.FC = () => {
 
-  console.log(styles)
+  const { t } = useTranslation()
 
   const handleClick = () => {
     Taro.navigateTo({
@@ -19,7 +20,7 @@ const Index: React.FC = () => {
 
   return (
     <View className='index'>
-      <Text>Hello world!</Text>
+      <Text>{t('global.helloWorld')}</Text>
       <Login />
       <Button onClick={handleClick}>跳转页面</Button>
     </View>
