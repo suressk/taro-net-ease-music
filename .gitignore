@@ -7,4 +7,6 @@ node_modules/
 
 *.lock
 .idea/*
-.vscode/*
+# .vscode/*
+
+*.log
