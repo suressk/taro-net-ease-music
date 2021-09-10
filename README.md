@@ -1,4 +1,4 @@
-# <div align="center">K. Taro Music</div>
+# <div align="center">K. Taro App</div>
 
 <div align="center">
     <img src="https://img.shields.io/badge/react-v17.0.0-blue">
@@ -65,7 +65,7 @@
     }
     ```
 
-2. 设置文件路径别名，配置 tsconfig.json： 为使 `vscode / webstorm` 编辑工具识别类似 `'@components/Login'` 的相对路径：
+2. 设置文件路径别名，配置 tsconfig.json： 为使 `vscode / WebStorm` 编辑工具识别类似 `'@components/Login'` 的相对路径：
 
     ```json
     {
