@@ -1,10 +1,10 @@
 import React, { memo } from 'react'
 import { View, Text } from '@tarojs/components'
-import {useRouter} from '@tarojs/taro'
-import './mine.scss'
+import { useRouter } from '@tarojs/taro'
+// import styles from './index.module.scss'
 
 const Mine: React.FC = () => {
-  const {params} = useRouter()
+  const { params } = useRouter()
 
   return (
     <View className='mine'>

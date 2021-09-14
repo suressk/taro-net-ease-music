@@ -1,7 +1,7 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/mine/mine'
+    'views/index/index',
+    'views/mine/index'
   ],
   permission: {
     'scope.userLocation': {
